@@ -1,0 +1,65 @@
+-- 
+-- Roll No: 40
+-- Name: Naseeba salahudheen
+-- Program: practice 2
+-- 
+
+
+--
+-- Table structure for table departments
+--
+
+create table departments(dno int primary key,dname varchar(50) not null);
+
+--
+__
+-- Table structure for table bookissues
+--
+
+-- ---------create/alter statement commands----------- # This line may be removed in the actual file
+
+--
+__
+-- Table structure for table students
+--
+
+alter table students drop column course;
+alter table students add column dno int;
+alter table students add constraint student_fkey_dno foreign key (dno) references departments(dno);
+
+
+--
+__Table structure for table bookissues
+__
+alter table bookissues add primary key(bookid,studentid);
+alter table bookissues add constraint bookissues_fkey_bookid foreign key (bookid) references books(bookid);
+alter table bookissues add constraint bookissues_fkey_studentid foreign key (studentid) references students(studentid);
+
+__
+-- Dumping data for table departments
+--
+
+insert into departments values(1,'MCA');
+
+
+--
+__
+-- Dumping data for table bookissues
+--
+
+insert into bookissues values(2,101,'2025-02-10',NULL,0.00),(1,102,'2025-02-12','2025-02-18',0.00);
+
+--
+__
+-- Dumping data for table <table_name>
+--
+
+-- --------insert/update statement commands----------- # This line may be removed in the actcual file
+
+--
+-- SQl Query Statements
+--
+
+-- -----SQL query statments preceeded by the its question-------- # This line may be removed in the actual file
+-- -----Question number should be commented---------------#This line may be removed in the actual file
+
